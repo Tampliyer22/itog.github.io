@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Регистрация</title>
+<style>
+
+  body {
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  form {
+    background: #1e1e1e;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  select,
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  .btn-register {
+    background-color: rgb(255, 71, 101);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .family-section {
+    margin-top: 30px;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .family-member {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+  }
+
+</style>
+</head>
+<body>
+<h1>Регистрация</h1>
+
+<form id="registrationForm" novalidate>
+  <label for="email">E-mail </label>
+  <input id="email" name="email" type="email" required placeholder="tampliyer@mail.ru" />
+
+  <label for="firstName">Имя </label>
+  <input id="firstName" name="firstName" type="text" required placeholder="Ваше имя" />
+
+  <label for="lastName">Фамилия </label>
+  <input id="lastName" name="lastName" type="text" required placeholder="Ваша фамилия" />
+
+  <label>Возраст </label>
+  <input id="ageNumber" name="ageNumber" type="number" min="0" max="120" required placeholder="Введите число" />
+
+  <label>Пол </label>
+  <select name="gender" required>
+    <option value="" disabled selected>Выберите пол</option>
+    <option value="мужской">Мужской</option>
+    <option value="женский">Женский</option>
+  </select>
+
+  <label for="password">Пароль</label>
+  <input id="password" name="password" type="password" required placeholder="Введите пароль" minlength="6" />
+
+  <label for="confirmPassword">Повтор пароля </label>
+  <input id="confirmPassword" name="confirmPassword" type="password" required placeholder="Повторите пароль" minlength="6" />
+
+  <label for="familyPhoto">Семейная фотография </label>
+  <input type="file" id="familyPhoto" name="familyPhoto" accept="image/*" required />
+
+  <label>
+    <input type="checkbox" id="personalDataConsent" name="personalDataConsent" required />
+    Согласие на обработку персональных данных
+  </label>
+
+  <button type="submit" class="btn-register">Зарегистрироваться</button>
+</form>
+
+<div id="message" class="message"></div>
+
+<section class="family-section">
+  <h2>Члены семьи</h2>
+
+  <div class="family-member">
+    <label for="fam1-lastName">Фамилия</label>
+    <input id="fam1-lastName" name="fam1-lastName" type="text" required placeholder="Фамилия" />
+
+    <label for="fam1-firstName">Имя </label>
+    <input id="fam1-firstName" name="fam1-firstName" type="text" required placeholder="Имя" />
+
+    <label for="fam1-age">Возраст </label>
+    <input id="fam1-age" name="fam1-age" type="number" min="0" max="120" required placeholder="Возраст" />
+
+    <label for="fam1-gender">Пол </label>
+    <select id="fam1-gender" name="fam1-gender" required>
+      <option value="" disabled selected>Выберите пол</option>
+      <option value="мужской">Мужской</option>
+      <option value="женский">Женский</option>
+    </select>
+  </div>
+
+  <div class="family-member">
+    <label for="fam2-lastName">Фамилия </label>
+    <input id="fam2-lastName" name="fam2-lastName" type="text" required placeholder="Фамилия" />
+
+    <label for="fam2-firstName">Имя </label>
+    <input id="fam2-firstName" name="fam2-firstName" type="text" required placeholder="Имя" />
+
+    <label for="fam2-age">Возраст </label>
+    <input id="fam2-age" name="fam2-age" type="number" min="0" max="120" required placeholder="Возраст" />
+
+    <label for="fam2-gender">Пол </label>
+    <select id="fam2-gender" name="fam2-gender" required>
+      <option value="" disabled selected>Выберите пол</option>
+      <option value="мужской">Мужской</option>
+      <option value="женский">Женский</option>
+    </select>
+  </div>
+</section>
+</body>
+</html>
